@@ -15,6 +15,14 @@ label{
 	height: 20%;
 	margin:0 auto;
 	margin-top: 10%;
-	font-size: 50px;
+	font-size: 30px;
 }
 
+input{
+	width: 50%;
+	height: 20%;
+	margin:0 auto;
+	margin-top: 10px;
+	font-size: 30px;
+	display: block;
+}
