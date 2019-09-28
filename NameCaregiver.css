@@ -15,8 +15,19 @@ label{
 	height: 20%;
 	margin:0 auto;
 	margin-top: 10%;
-	font-size: 50px;
+	font-size: 30px;
 }
 
+<<<<<<< HEAD
 
 
+=======
+input{
+	width: 50%;
+	height: 20%;
+	margin:0 auto;
+	margin-top: 10px;
+	font-size: 30px;
+	display: block;
+}
+>>>>>>> a935b2852a600abe56e53ca56f9b8d2fd1a6f028
