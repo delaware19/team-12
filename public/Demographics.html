@@ -13,18 +13,21 @@
             function choice(){
                 var button1 = document.getElementById("choice1");
                 var button2 = document.getElementById("choice2");
+                var demo = document.querySelector('#Demographics');  // $('img')[0]
+                
 
                 if (button1.checked){
-                     alert("radio1 selected");
+                    alert("Chose to work from a template")
+                    demo.action = "Templates.html"
                 }else if (button2.checked) {
-                    alert("Button 2 checked")
-                    return "NewStory.html"
+                    alert("Chose to create a new Story")
+                    demo.action = "NewStory.html"
                 }
             }
         </script>
     </head>
     <h1>Child Information</h1>
-    <form  id="Demographics" class="option" method="GET" onsubmit="choice()" action="NewStory.html">
+    <form  id="Demographics" class="option" method="GET" onsubmit="choice()" >
     <body>
         Child's Name
         <input type="text" id="age" name="Age" required><br> 
