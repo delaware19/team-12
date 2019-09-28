@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create a new Story</title> 
+        <link rel="stylesheet" href="Demographics.css">
+        
+    </head>
+    <body>
+        <form id = "page" class="option" method="POST">
+            <input type='file' />
+            <br><img id="myImg" src="#" alt="your image" height=200 width=350>
+            <br>
+            Caption
+            <input type="text" name = "caption" id="Caption"><br>
+            <input type="Submit" value="Add Page">
+            <input type="Submit" value="Complete Story">
+        </form>
+    
+    <script>
+    window.addEventListener('load', function() {
+  document.querySelector('input[type="file"]').addEventListener('change', function() {
+      if (this.files && this.files[0]) {
+          var img = document.querySelector('img');  // $('img')[0]
+          img.src = URL.createObjectURL(this.files[0]); // set src to file url
+          //console.log(img.src);
+          //img.onload = imageIsLoaded; // optional onload event listener
+      }
+  });
+});
+
+function imageIsLoaded(e) { alert(e); }
+</script>
+</body>
+</html>
