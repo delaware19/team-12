@@ -2,7 +2,7 @@ import java.util.*;
 import Frame;
 
 enum Age {
-    TODDLER, CHILD, TEEN
+    TODDLER, CHILD, TEEN, ADULT
 }
 
 enum Gender {
