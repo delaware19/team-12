@@ -1,74 +1,69 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        
-        <title>Demographics</title> 
-        <link rel="stylesheet" href="Demographics.css">
-        <div class="logo">
-        <img src="nemours-childrens-health-system-banner.jpg" alt="ordering_logo" >
-        <img src="nemours-childrens-health-system.jpg" alt="ordering_logo" >
-        </div>
 
-        <script>
-            function choice(){
-                var button1 = document.getElementById("choice1");
-                var button2 = document.getElementById("choice2");
+<head>
 
-                if (button1.checked){
-                     alert("radio1 selected");
-                }else if (button2.checked) {
-                    alert("Button 2 checked")
-                    return "NewStory.html"
-                }
-            }
-        </script>
-    </head>
+
+    <title>Demographics</title>
+    <link rel="stylesheet" href="Demographics.css">
+    <div class="logo">
+        <img src="nemours-childrens-health-system-banner.jpg" alt="ordering_logo">
+        <img src="nemours-childrens-health-system.jpg" alt="ordering_logo">
+    </div>
+
+</head>
+<div class="form">
     <h1>Child Information</h1>
-    <form  id="Demographics" class="option" method="GET" onsubmit="choice()" action="NewStory.html">
-    <body>
-        Child's Name
-        <input type="text" id="age" name="Age" required><br> 
-        Race
-        <select name="race" id="Race"  required>
-            <option value="Black or African American">Black or African American</option>
-            <option value="American Indian or Alaska Native">American Indian or Alaska Native</option>
-            <option value="Asian">Asian</option>
-            <option value="Native Hawaiian or Other Pacific Islander">Native Hawaiian or Other Pacific Islander</option>
-            <option value="White">White</option> 
-        </select>
-        <br>
-        Ethnicity
-            <select name="ethnicity" id="ethnicity"  required>
-                    <option value="Hispanic or Latino or Spanish Origin">Hispanic or Latino or Spanish Origin</option>
-                    <option value="Not Hispanic or Latino or Spanish Origin">Not Hispanic or Latino or Spanish Origin</option>
-            </select>
+    <form id="Demographics" class="option" method="GET" onSubmit="choice()" >
+        <body style="text-align: center">
+            <text>Child's Name </text>
+            <input type="text" id="age" name="Age" required>
             <br>
-        Gender <br>
-            <select name="ethnicity" id="ethnicity" required>
+            Caregiver's Name
+            <input type="text" name="parentname" id="parentName" required> <br>
+            Child's Gender
+            <select name="gender" id="dropdown" width="100%" required>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
-            </select>
-        <br>
-        Parent Name
-        <input type="text" name="parentname" id="parentName"  required> <br>
-        Parent Gender <br>
-            <select name="ethnicity" id="ethnicity" required>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
-        <br>
-        Caregiver
-        <input type="text" name="caregiver" id="CareGiver" required> 
-    <div style="text-align: center"><br>
-        <input type="radio" name="story" id = "choice1" value="Template"> 
-        <label for="choice1">Choose Story Template </label><br>
-    </div>
-    <div style="text-align: center">
-        <input type="radio" name="story" id = "choice2" value="Create"> 
-        <label for="choice2">Create New Story </label><br>
-    </div>
-
-        <input type="submit" value="Submit" >
+            </select><br>
+            Child's Age
+            <select name="age" id="dropdown" required>
+                <option value="Infant">Infant</option>
+                <option value="Child">Child</option>
+                <option value="Teen">Teen</option>
+                <option value="Adult">Adult</option>
+            </select><br>
+            Child's Race
+            <select name="race" id="dropdown" required>
+                <option value="Black or African American">Black or African American</option>
+                <option value="American Indian or Alaska Native">American Indian or Alaska Native</option>
+                <option value="Asian">Asian</option>
+                <option value="Native Hawaiian or Other Pacific Islander">Native Hawaiian or Other Pacific Islander
+                </option>
+                <option value="White">White</option>
+            </select><br>
+            <div style="text-align: center">
+                <input type="submit" name="story" id="choice1" value="Choose Story">
+                <input type="submit" name="story" id="choice2" value="Create Story">
+            </div>
     </form>
+
+    <script>
+        function chooseStory(){
+        var demo = document.querySelector('#Demographics');
+        demo.action = "Templates.html";
+       }
+       function createNew() {
+        var demo = document.querySelector('#Demographics');
+        demo.action = "NewStory.html";
+       }
+
+        document.getElementById("choice1").addEventListener("click", chooseStory);
+        document.getElementById("choice2").addEventListener("click", createNew);
+
+    </script>
+
     </body>
+</div>
+
 </html>

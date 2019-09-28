@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="Templates.css">
     <head>
     <style>
     .center {
@@ -16,13 +17,12 @@
     <body>
         <form id = "page" class="option" method="POST">
             Procedure
-            <br>
-            <select id="mySelect">
+            <select class="mySelect" >
               <option value="Cast">Cast</option>
               <option value="Checkup">Checkup</option>
               <option value="Shot">Shot</option>
               <option value="Surgery">Surgery</option>
-            </select>
+            </select><br><br>
             <button id="findStory" onclick = "chooseImage()">Find Story</button>
         </form>
         <br>
