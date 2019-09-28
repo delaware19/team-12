@@ -1,5 +1,3 @@
-// code from https://www.w3schools.com/howto/howto_js_slideshow.asp
-
 var slideIndex = 1;
 showSlides(slideIndex);
 

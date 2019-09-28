@@ -4,24 +4,24 @@
     <script src="storyshow.js"></script>
     <link rel="stylesheet" type="text/css" href="storyshow.css">
 
-<div class="slideshow-container">
+<div id = "hold_slideshow" class="slideshow-container">
 
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
     <!--<div class="numbertext">1 / 3</div>-->
-    <img src="example_image.jpg" style="width:100%">
+    <img src="example_image.jpg" >
     <div class="text">Welcome to Nemour, [child's name]</div>
   </div>
 
   <div class="mySlides fade">
     <!--<div class="numbertext">2 / 3</div>-->
-    <img src="example_image_2.jpg" style="width:100%">
+    <img src="example_image_2.jpg" >
     <div class="text">You will now undergo [insert procedure]</div>
   </div>
 
   <div class="mySlides fade">
     <!--<div class="numbertext">3 / 3</div>-->
-    <img src="patient_room.jpg" style="width:100%">
+    <img src="patient_room.jpg" >
     <div class="text">You did a great job, [child's name]!</div>
   </div>
 
@@ -33,13 +33,13 @@
 
   <div class="mySlides fade">
     <!--<div class="numbertext">2 / 3</div>-->
-    <img src="example_image_2.jpg" style="width:100%">
+    <img src="example_image_2.jpg" >
     <div class="text">You will now undergo [insert procedure]</div>
   </div>
 
   <div class="mySlides fade">
     <!--<div class="numbertext">3 / 3</div>-->
-    <img src="patient_room.jpg" style="width:100%">
+    <img src="patient_room.jpg" >
     <div class="text">You did a great job, [child's name]!</div>
   </div>
 
@@ -50,7 +50,7 @@
 <br>
 
 <!-- The dots/circles -->
-<div style="text-align:center">
+<div id = "node_buttons" style="text-align:center">
   <span class="dot" onclick="currentSlide(1)"></span>
   <span class="dot" onclick="currentSlide(2)"></span>
   <span class="dot" onclick="currentSlide(3)"></span>
@@ -62,5 +62,36 @@
 <script type="text/javascript" >
   window.addEventListener('load', function(){
     currentSlide(1);
+
+   // generateSlide(10);
   });
+
+  // function generateSlide(int n){
+  //   var hold_slideshow = document.getElementById("hold_slideshow");
+  //   var node_buttons = document.getElementById("node_buttons");
+
+  //   for(int i=1;i<n;i++){
+  //     var slide_div = document.createElement("div");
+  //     slide_div.className = "mySlides fade";
+
+  //     var img = document.createElement("img");
+  //     img.src = "patient_room.jpg";
+
+  //     var caption_div = document.createElement("div");
+  //     caption_div.className = "text";
+
+  //     hold_slideshow.appendChild(slide_div);
+  //     hold_slideshow.appendChild(img);
+  //     hold_slideshow.appendChild(caption_div);
+
+
+  //     var new_node = document.createElement('span');
+  //     new_node.className = "dot";
+  //     new_node.onclick = "currentSlide("+i+")";
+  // }
+
+  //generateSlide(10);
+
+    
+
 </script>
