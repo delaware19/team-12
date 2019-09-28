@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <style>
-    .center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    </style>
-        <title>Create a new Story</title> 
-        <link rel="stylesheet" href="Demographics.css">
-        <img src="nemours-childrens-health-system.jpg" alt="ordering_logo" id="logo" class = "center">
-    </head>
-    <body>
-        <h1>Create a New Story</h1>
-        <form id = "page" class="option" method="POST">
-            Procedure Name
-            <input type="text" id="procedure name"/>
-            Caption
-            <input type="text" name = "caption" id="caption_input"><br>
-            <br><input type='file' />
-            <img id="selected_img" src="" class = "center">
-            <br><br>
-            <input type="Submit" value="Add Page" onsubmit="addToListOfFrames()">
-            <input type="Submit" value="Complete Story" onsubmit="endStory()">
-        </form>
-    
-    <script>
-    window.addEventListener('load', function() {
-  document.querySelector('input[type="file"]').addEventListener('change', function() {
-      if (this.files && this.files[0]) {
-          var img = document.querySelector('#selected_img');  // $('img')[0]
-          img.src = URL.createObjectURL(this.files[0]); // set src to file url
-          img.height = 200;
-          img.width = 350;
-      }
-  });
-});
 
-</script>
+<head>
+    <script type = "text/javascript" src = "client.js" ></script>
+    <style>
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <title>Create a new Story</title>
+    <link rel="stylesheet" href="Demographics.css">
+    <img src="nemours-childrens-health-system.jpg" alt="ordering_logo" id="logo" class="center">
+</head>
+
+<body>
+    <h1>Create a New Story</h1>
+    <form id="page" class="option" method="POST">
+        Procedure Name
+        <input type="text" id="procedure name" />
+        Caption
+        <input type="text" name="caption" id="caption_input"><br>
+        <br><input type='file' />
+        <img id="selected_img" src="" class="center">
+        <br><br>
+        <input type="button" id="endStory" value=" alert" onclick="testfunction()">
+        <input type="button" id="addFrame" value="Add Page" onclick="addToListOfFrames()">
+        <input type="Submit" id="endStory" value="Complete Story" onclick="endStory()">
+    </form>
+    <script>
+        window.addEventListener('load', function () {
+            document.querySelector('input[type="file"]').addEventListener('change', function () {
+                if (this.files && this.files[0]) {
+                    var img = document.querySelector('#selected_img');  // $('img')[0]
+                    img.src = URL.createObjectURL(this.files[0]); // set src to file url
+                    img.height = 200;
+                    img.width = 350;
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
