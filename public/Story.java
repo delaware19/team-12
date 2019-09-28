@@ -13,23 +13,12 @@ enum Race {
     AMERICAN_INDIAN, WHITE, BLACK, ASIAN, PACIFIC_ISLANDER, LATIN_SPANISH
 }
 
-
 public class Story {
-    
-    private @Id @GeneratedValue Long id;
     private List<Frame> pages;
     private Age age;
     private Gender gender;
     private Race race;
     private String procedure;
-
-    public Story(List<Frame> pages, Age age, Gender gender, Race race, Sting procedure) {
-        this.pages = pages;
-        this.age = age;
-        this.gender = gender;
-        this.race = race;
-        this.procedure = procedure;
-    }
 
     public Age getAge() {
         return age;
