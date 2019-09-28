@@ -42,3 +42,7 @@ input{
     padding: 50dp
     
 }
+
+select{
+   margin: 8px 0;
+}
