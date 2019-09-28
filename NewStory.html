@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <style>
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    </style>
         <title>Create a new Story</title> 
         <link rel="stylesheet" href="Demographics.css">
-        <img src="nemours-childrens-health-system.jpg" alt="ordering_logo" id="logo">
+        <img src="nemours-childrens-health-system.jpg" alt="ordering_logo" id="logo" class = "center">
     </head>
     <body>
         <form id = "page" class="option" method="POST">
             <input type='file' />
-            <br><img id="myImg" src="" height= width=>
+            <br><img id="myImg" src="" class = "center">
             <br>
             Caption
             <input type="text" name = "caption" id="Caption"><br>
@@ -20,7 +27,7 @@
     window.addEventListener('load', function() {
   document.querySelector('input[type="file"]').addEventListener('change', function() {
       if (this.files && this.files[0]) {
-          var img = document.querySelector('img');  // $('img')[0]
+          var img = document.querySelector('#myImg');  // $('img')[0]
           img.src = URL.createObjectURL(this.files[0]); // set src to file url
           img.height = 200;
           img.width = 350;
