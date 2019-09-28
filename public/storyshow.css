@@ -1,12 +1,27 @@
 /* code from https://www.w3schools.com/howto/howto_js_slideshow.asp */
-
 * {box-sizing:border-box}
+
+html{
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  width: 90%;
+  height: 80%;
   position: relative;
   margin: auto;
+}
+
+img{
+  height: 100%;
+  width: 50%;
 }
 
 /* Hide the images by default */
