@@ -1,6 +1,10 @@
 //HTML ELEMENTS------------------------------
 var create_button = document.getElementById("test_btn");
 
+//Child Information Page
+var demographics = document.getElementById("Demographics");
+var childinformationSubmit_btn = document.getElementById("childinformation_btn");
+
 //Create Story Page
 var selectedimg = document.getElementById("selected_img");//this.files[0]
 
@@ -40,7 +44,15 @@ function createStory(){
 	var ethnicity_input = document.getElementById("parentName").value;
 	var parentgender_input = document.getElementById("parentGender").value;
 
-	return Story([], name_input, age_input, childgender_input, race_input, ethnicity_input, parentgender_input);
+	console.log(name_input,age_input,race_input,ethnicity_input);
+
+	return new Story([], name_input, age_input, childgender_input, race_input, ethnicity_input, parentgender_input);
+}
+
+var current_story = null;
+function generateNewStory(){
+	current_story = createStory();
+	console.log(current_story);
 }
 
 var listOfFrames = [];
@@ -49,37 +61,31 @@ function createFrame(){
 	var inputted_caption = document.getElementById("caption_input");
 
 	if(selectedimg.src.length>0 && inputted_caption.length>0){
-		new_frame = Frame(selected_img.src, inputted_caption);
+		new_frame = new Frame(selected_img.src, inputted_caption);
 		return new_frame;
+	}
+	else{
+		return null;
 	}
 	console.log("No Frame was created");
 }
 
+function addToListOfFrames(){
+	if(createFrame!=null){
+		listOfFrames.push(createFrame());
+	};
+}
+//localStorage.setItem('myStorage', JSON.stringify(example));
+childinformationSubmit_btn.addEventListener("click", generateNewStory);
 
+
+//Updates the page constantly
+socket.on('updatePage',function(){
+	console.log("Updating page");
+});
 
 console.log("WORKING");
-// var example = {
-// 	"1": 1,
-// 	"2": 2,
-// 	"3": 3,
-// 	"Name": "John"
-// };
-
-function test(){
-	//localStorage.setItem('myStorage', JSON.stringify(example));
-	console.log("CLICKED");
-
-	//console.log(window.localStorage.getItem('myStorage'));
-	socket.emit('userclicked',{
-		"username":"john"
-	});
-}
-
-
-console.log(create_button.innerHTML);
-create_button.addEventListener("click",test);
-
-
+console.log(demographics);
 
 //create_button.onclick = test();
 

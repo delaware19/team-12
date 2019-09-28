@@ -93,6 +93,10 @@ io.on('connection',function(socket){
 		console.log(data);
 	});
 
+	setInterval(function(){
+		socket.emit('updatePage');
+	},1000);
+
 	socket.on('disconnect',function(){
 		console.log('User '+socket.id+' has logged off.');
 	});
