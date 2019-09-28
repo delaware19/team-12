@@ -1,0 +1,23 @@
+{
+   "age": "INFANT",
+   "gender": "MALE",
+   "race": "WHITE",
+   "list": [
+      {
+         "picture": "picture1.jpg",
+         "caption": "hello"
+      },
+      {
+         "picture": "picture2.jpg",
+         "caption": "hello again"
+      },
+      {
+         "picture": "picture3.jpg",
+         "caption": "you're done!"
+      },
+      {
+         "picture": "picture4.jpg",
+         "caption": "yay!"
+      }
+   ]
+}
