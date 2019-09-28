@@ -26,6 +26,7 @@ h1 {
     <div style="background: rgb(0,232,255);
     background: linear-gradient(90deg, rgba(0,232,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(0,232,255,1) 100%);">
     <input type = "text" name="caption1" value="Today, I'm going to the clinic!" ></input> </div>
+    <input type="submit" name="edit_button1" id="edit" value="Edit" onclick="editCaption(document.getElementsByName("caption1"))></input>
   </div>
 
   <div class="mySlides fade">
@@ -34,6 +35,7 @@ h1 {
     <div style="background: rgb(0,232,255);
     background: linear-gradient(90deg, rgba(0,232,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(0,232,255,1) 100%);">
     <input type = "text" name="caption2" value="Now I'm going to [Procedure] with mommy" ></input> </div>
+    <input type="submit" name="edit_button2" id="edit" value="Edit" onclick="editCaption(document.getElementsByName("caption2"))></input>
   </div>
 
   <div class="mySlides fade">
@@ -56,7 +58,9 @@ h1 {
   <span class="dot" id ="Dot3" onclick="currentSlide(3)"></span>
   </div>
 
-  <input type="submit" name="edit_button" id="edit" value="Edit" onclick="">
+  
+
+  <input type="submit" name="edit_button" id="edit" value="Edit" onclick="editCaption(document.getElementsByName("caption3"))></input>
   
 
 </body>
@@ -66,23 +70,9 @@ h1 {
 
 var root = firebase.database().ref('team12-8c377');
 
-function callEdit{
-  if (document.getElementsByClassName(dot).currentSlide == 1){
-    var slide = document.getElementById("Dot1").
-    editCaption(slide)
-  }
-  else if (document.getElementsByClassName(dot).currentSlide == 2){
-    var slide = document.getElementById("Dot2").
-    editCaption(slide)
-  }
-  else{
-    var slide = document.getElementById("Dot3").
-    editCaption(slide)
-  }
-}
-function editCaption(id){
+function editCaption(name){
       var storyid = 1011
-      var str = document.getElementById(id)
+      var str = document.getElementById(name)
       firebase.database().ref('users/' + str).set({
           storyID: storyid,
           caption:  str
