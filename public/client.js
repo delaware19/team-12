@@ -16,6 +16,22 @@ socket.on('connect',function(){
 									//connection unique id (to idenify client-speciifc player)
 });
 
+function loadJSON(callback) {   
+  var xobj = new XMLHttpRequest();
+  xobj.overrideMimeType("application/json");
+  xobj.open('GET', "./storyEX1.json", true);
+  xobj.onreadystatechange = function () {
+    if (xobj.readyState == 4 && xobj.status == "200") {
+      callback(JSON.parse(xobj.responseText));
+    }
+  };
+  xobj.send(null);  
+}
+
+loadJSON(function(json) {
+  console.log(json); // this will log out the json object
+});
+
 class Story {
     constructor(frames_Frame, childname_str, age_enum, childgender_enum, race_enum, ethnicity_enum, parentgender_enum) {
         this.frames_Frame = frames_Frame;
@@ -73,14 +89,14 @@ function createFrame(){
 function addToListOfFrames(){
 	if(createFrame!=null){
 		listOfFrames.push(createFrame());
-		console.log(listOfFrames)
-	};
+		console.log(listOfFrames);
+	}
 }
 
 function endStory(){
-	return listOfFrames()
-	console.log(listOfFrames)
-}
+	return listOfFrames();
+	console.log(listOfFrames);
+};
 //localStorage.setItem('myStorage', JSON.stringify(example));
 childinformationSubmit_btn.addEventListener("click", generateNewStory);
 

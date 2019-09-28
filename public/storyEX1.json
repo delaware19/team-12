@@ -1,0 +1,20 @@
+{
+	"story":{
+		"frame1":{
+			"imgpath":"./example_image",
+			"caption":"I will be going to the clinic today."
+		},
+		"frame2":{
+			"imgpath":"./example_image2",
+			"caption":"I will greet the front desk lady."
+		},
+		"frame3":{
+			"imgpath":"./",
+			"caption":"I feel nervous but I know I will be okay at the clinic."
+		},
+		"frame4":{
+			"imgpath":"./",
+			"caption":"In a few moments I will get my shots and it will quick before I know it."
+		}
+	}
+}

@@ -24,7 +24,7 @@ function createSlides(json_obj) {
 
     var backPic = document.createElement('img');
     backPic.src = json_obj.list[i].picture;
-    backPic.style = "width:100%"
+    backPic.style = "width:100%";
     divFade.appendChild(backPic);
 
     var divText = document.createElement('div');
