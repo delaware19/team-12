@@ -91,24 +91,23 @@
                 childage:child_age,
                 childrace:child_race
             });
+
+            //Storing locally the Child's name and age to retrieve their info later
+              sessionStorage.setItem("childname", child_name);
+              sessionStorage.setItem("childage", child_age);
           }
+
 
           
 
         function chooseStory(){
             storeChildData();
-         // var demo = document.querySelector('#Demographics');
-         //    demo.action = "Templates.html";
-
          window.location.href='Templates.html';
 
         
        }
        function createNew() {
         storeChildData();
-        // var demo = document.querySelector('#Demographics');
-        // demo.action = "NewStory.html";
-
         window.location.href='NewStory.html';
        }
   
