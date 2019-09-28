@@ -13,7 +13,7 @@ enum Race {
     AMERICAN_INDIAN, WHITE, BLACK, ASIAN, PACIFIC_ISLANDER, LATIN_SPANISH
 }
 
-
+@Entity
 public class Story {
     
     private @Id @GeneratedValue Long id;
