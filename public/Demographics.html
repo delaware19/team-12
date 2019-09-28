@@ -34,7 +34,7 @@
 </head>
 <div class="form">
     <h1>Child Information</h1>
-    <form id="Demographics" class="option" method="GET" onSubmit="choice()" >
+    <form id="Demographics" class="option" method="GET" >
         <body style="text-align: center">
             <text>Child's Name </text>
             <input type="text" id="childName" name="childname"></input>
@@ -43,19 +43,19 @@
             <input type="text" name="caregiverName" id="parentName"></input>
              <br>
             Child's Gender 
-            <select name="gender" id="gender_dropdown" width="100%" required>
+            <select name="gender" id="gender_dropdown" class="dropdown" width="100%" required>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select><br>
             Child's Age
-            <select name="age" id="age_dropdown" required>
+            <select name="age" id="age_dropdown" class="dropdown" required>
                 <option value="Infant">Infant</option>
                 <option value="Child">Child</option>
                 <option value="Teen">Teen</option>
                 <option value="Adult">Adult</option>
             </select><br>
             Child's Race
-            <select name="race" id="race_dropdown" required>
+            <select name="race" id="race_dropdown" class="dropdown" required>
                 <option value="Black or African American">Black or African American</option>
                 <option value="American Indian or Alaska Native">American Indian or Alaska Native</option>
                 <option value="Asian">Asian</option>
@@ -97,15 +97,11 @@
               sessionStorage.setItem("childage", child_age);
           }
 
-
-          
-
         function chooseStory(){
             storeChildData();
          window.location.href='Templates.html';
-
-        
        }
+
        function createNew() {
         storeChildData();
         window.location.href='NewStory.html';
