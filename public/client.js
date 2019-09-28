@@ -12,14 +12,14 @@ socket.on('connect', function(){
 	console.log("CONNECTED");
 });
 
-function test(){
-	localStorage.setItem('myStorage', JSON.stringify(example));
-	console.log("CLICKED");
+// function test(){
+// 	localStorage.setItem('myStorage', JSON.stringify(example));
+// 	console.log("CLICKED");
 
-	console.log(window.localStorage.getItem('myStorage'));
-}
+// 	console.log(window.localStorage.getItem('myStorage'));
+// }
 
-console.log(create_button.innerHTML);
-create_button.addEventListener("click",test);
+// console.log(create_button.innerHTML);
+// create_button.addEventListener("click",test);
 //socket.emit('msg', {})
 //socket.on('msg', function(){
