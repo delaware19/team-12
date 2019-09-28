@@ -58,7 +58,7 @@
         function chooseImage(){
           //alert("hello");
           var x = document.getElementById("mySelect").value;
-          
+          sessionStorage.setItem("procedure", x);
           var string = "";
           
           var img = document.querySelector('#proc');
@@ -80,6 +80,7 @@
             string = "Fetch Surgery message from backend";
           }
           document.getElementById('caption').innerHTML = string;
+          
           
           }
 </script>
