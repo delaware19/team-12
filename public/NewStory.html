@@ -15,10 +15,10 @@
     <body>
         <form id = "page" class="option" method="POST">
             <input type='file' />
-            <br><img id="myImg" src="" class = "center">
+            <br><img id="selected_img" src="" class = "center">
             <br>
             Caption
-            <input type="text" name = "caption" id="Caption"><br>
+            <input type="text" name = "caption" id="caption_input"><br>
             <input type="Submit" value="Add Page">
             <input type="Submit" value="Complete Story">
         </form>
@@ -27,7 +27,7 @@
     window.addEventListener('load', function() {
   document.querySelector('input[type="file"]').addEventListener('change', function() {
       if (this.files && this.files[0]) {
-          var img = document.querySelector('#myImg');  // $('img')[0]
+          var img = document.querySelector('#selected_img');  // $('img')[0]
           img.src = URL.createObjectURL(this.files[0]); // set src to file url
           img.height = 200;
           img.width = 350;
@@ -38,5 +38,7 @@
 });
 
 </script>
+<script type="text/javascript" src= "/socket.io/socket.io.js"> </script>
+<script type="text/javascript" src="client.js"></script>
 </body>
 </html>

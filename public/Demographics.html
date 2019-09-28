@@ -30,9 +30,11 @@
     <form  id="Demographics" class="option" method="GET" onsubmit="choice()" >
     <body>
         Child's Name
-        <input type="text" id="age" name="Age" required><br> 
+        <input type="text" id="childName" name="childName" required><br>
+        Child's Age 
+        <input type="text" id="childAge" name="childAge" required><br>
         Race
-        <select name="race" id="Race"  required>
+        <select name="race" id="race"  required>
             <option value="Black or African American">Black or African American</option>
             <option value="American Indian or Alaska Native">American Indian or Alaska Native</option>
             <option value="Asian">Asian</option>
@@ -47,7 +49,7 @@
             </select>
             <br>
         Gender <br>
-            <select name="ethnicity" id="ethnicity" required>
+            <select name="gender" id="childGender" required>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
@@ -55,7 +57,7 @@
         Parent Name
         <input type="text" name="parentname" id="parentName"  required> <br>
         Parent Gender <br>
-            <select name="ethnicity" id="ethnicity" required>
+            <select name="parentGender" id="parentGender" required>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
@@ -73,5 +75,8 @@
 
         <input type="submit" value="Submit" >
     </form>
+
+    <script type="text/javascript" src= "/socket.io/socket.io.js"> </script>
+    <script type="text/javascript" src="client.js"></script>
     </body>
 </html>
