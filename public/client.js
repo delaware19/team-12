@@ -7,6 +7,8 @@ var childinformationSubmit_btn = document.getElementById("childinformation_btn")
 
 //Create Story Page
 var selectedimg = document.getElementById("selected_img");//this.files[0]
+var addPage_button = document.getElementById("addPage_btn");
+//var selectedimg = document.getElementById("selected_img");
 
 
 
@@ -78,6 +80,10 @@ function addToListOfFrames(){
 //localStorage.setItem('myStorage', JSON.stringify(example));
 childinformationSubmit_btn.addEventListener("click", generateNewStory);
 
+
+// addPage_button.addEventListener("click", function(){
+// 	socket.emit('addedPage');
+// });
 
 //Updates the page constantly
 socket.on('updatePage',function(){
