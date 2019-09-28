@@ -73,7 +73,13 @@ function createFrame(){
 function addToListOfFrames(){
 	if(createFrame!=null){
 		listOfFrames.push(createFrame());
+		console.log(listOfFrames)
 	};
+}
+
+function endStory(){
+	return listOfFrames()
+	console.log(listOfFrames)
 }
 //localStorage.setItem('myStorage', JSON.stringify(example));
 childinformationSubmit_btn.addEventListener("click", generateNewStory);
