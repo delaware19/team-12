@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script>
+            alert("Page Reloaded");
+            </script>
     <style>
     .center {
       display: block;
       margin-left: auto;
       margin-right: auto;
     }
+    
     </style>
         <title>Select a template</title> 
         <link rel="stylesheet" href="Demographics.css">
@@ -23,10 +27,10 @@
               <option value="Shot">Shot</option>
               <option value="Surgery">Surgery</option>
             </select>
-            <button id="findStory" onclick = "chooseImage()">Find Story</button>
+            <button id="findStory" type="button" onclick = "chooseImage()">Find Story</button>
         </form>
         <br>
-        <img id="proc" src="" height="200" width="200" class = "center">
+        <img id="proc" src="" class = "center">
     
     <script>
         function chooseImage(){
