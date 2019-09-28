@@ -25,27 +25,13 @@ console.log(jsonContent);
 
 io.on('connection',function(socket){
 	console.log('User '+socket.id+' has logged on.');
-	
- 
- // 	try{
-	// 	fs.writeFile(testdata, "./");
-	// 	console.log
-	// }
-	// catch(err){
-	// 	console.error(err);
-	// }
- 
- 
- //    console.log("JSON file has been saved.");
-
-
-	
+	setInterval(function(){
+		console.log("Printing");
+	}, 1000);
 
 	socket.on('disconnect',function(){
 		console.log('User '+socket.id+' has logged off.');
 	});
 
-	// setInterval(function(){
-	// 	console.log("Printing");
-	// }, 1000);
+	
 });
