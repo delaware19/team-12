@@ -13,13 +13,14 @@ socket.on('connect',function(){
 });
 
 class Story {
-    constructor(frames_Frame, childname_str, age_enum, gender_enum, race_enum, procedure_str) {
+    constructor(frames_Frame, childname_str, age_enum, childgender_enum, race_enum, ethnicity_enum, parentgender_enum) {
         this.frames_Frame = frames_Frame;
         this.childname_str = childname_str;
         this.age_enum = age_enum;
-        this.gender_enum = gender;
-        this.race_enum = race;
-        this.procedure_str = procedure_str;
+        this.childgender_enum = childgender_enum;
+        this.race_enum = race_enum;
+        this.ethnicity_enum = ethnicity_enum;
+        this.parentgender_enum = parentgender_enum;
     }
 }
 
@@ -33,14 +34,13 @@ class Frame {
 function createStory(){
 	var name_input = document.getElementById("childName").value;
 	var age_input = document.getElementById("childAge").value;
-	var race_input = document.getElementById("race");
-	var ethnicity_input = document.getElementById("ethnicity");
-	var gender_input = document.getElementById("gender");
-	var ethnicity_input = document.getElementById("parentName");
-	var gender_input = document.getElementById("parentGender");
+	var race_input = document.getElementById("race").value;
+	var ethnicity_input = document.getElementById("ethnicity").value;
+	var childgender_input = document.getElementById("childGender").value;
+	var ethnicity_input = document.getElementById("parentName").value;
+	var parentgender_input = document.getElementById("parentGender").value;
 
-	return Story([]);
-
+	return Story([], name_input, age_input, childgender_input, race_input, ethnicity_input, parentgender_input);
 }
 
 var listOfFrames = [];
