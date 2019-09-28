@@ -28,29 +28,53 @@ const Race={
 }
 
 class Story {
-    constructor(pages_int, age_enum, gender_enum, race_enum, procedure_str) {
-        this.pages = pages;
-        this.age = age;
-        this.gender = gender;
-        this.race = race;
-        this.procedure = procedure;
+    constructor(frames_Frame, age_enum, gender_enum, race_enum, procedure_str) {
+        this.frames_Frame = frames_Frame;
+        this.age_enum = age_enum;
+        this.gender_enum = gender;
+        this.race_enum = race;
+        this.procedure_str = procedure_str;
     }
 }
 
 class Frame {
-   constructor(picture_str, caption_str) {
-      this.picture = picture;
-      this.caption = caption;
+   constructor(imgpath_str, caption_str) {
+      this.imgpath_str = imgpath_str;
+      this.caption_str = caption_str;
    }
 }
+
+/*Example of JSON for child story
+
+var story1 = {
+	AGE:"INFANT",
+	GENDER: "MALE",
+	RACE: "WHITE",
+	FRAME1:{
+		IMGPATH: "./test1.jpg",
+		CAPTION: "Other Children may like the same toys as me"
+	},
+
+	FRAME2:{
+		IMGPATH: "./test2.jpg",
+		CAPTION: "I can share by giving some toys"
+	},
+
+	FRAME3:{
+		IMGPATH: "./test3.jpg",
+		CAPTION: "Say hi to the person"
+	}
+}
+*/
 
 //Static Files
 app.use(express.static('public'));
 
 app.get('/',function(req,res){
-	res.sendFile(__dirname+'/public/ChooseCreate.html');
+	res.sendFile(__dirname+'/public/Demographics.html');
 	console.log('working server');
 });
+
 
 
 //Socket Setup
@@ -63,7 +87,7 @@ console.log(jsonContent);
 
 io.on('connection',function(socket){
 	console.log('User '+socket.id+' has logged on.');
-	
+
 	socket.on('userclicked', function(data){
 		console.log("A USER CLICKED A BUTTON");
 		console.log(data);
