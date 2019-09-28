@@ -12,17 +12,40 @@ app.use(express.static('public'));
 app.get('/',function(req,res){
 	res.sendFile(__dirname+'/public/ChooseCreate.html');
 	console.log('working server');
-})
+});
 
 
 //Socket Setup
 var io = socket(server);
 
+var testdata= '{"name":"john"}';
+var jsonObj = JSON.parse(testdata);
+var jsonContent = JSON.stringify(jsonObj);
+console.log(jsonContent);
+
 io.on('connection',function(socket){
 	console.log('User '+socket.id+' has logged on.');
+	
+ 
+ // 	try{
+	// 	fs.writeFile(testdata, "./");
+	// 	console.log
+	// }
+	// catch(err){
+	// 	console.error(err);
+	// }
+ 
+ 
+ //    console.log("JSON file has been saved.");
+
+
 	
 
 	socket.on('disconnect',function(){
 		console.log('User '+socket.id+' has logged off.');
-	})
+	});
+
+	// setInterval(function(){
+	// 	console.log("Printing");
+	// }, 1000);
 });
