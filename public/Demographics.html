@@ -4,10 +4,29 @@
         
         <title>Demographics</title> 
         <link rel="stylesheet" href="Demographics.css">
+        <div class="logo">
+        <img src="nemours-childrens-health-system-banner.jpg" alt="ordering_logo" >
+        <img src="nemours-childrens-health-system.jpg" alt="ordering_logo" >
+        </div>
+
+        <script>
+            function choice(){
+                var button1 = document.getElementById("choice1");
+                var button2 = document.getElementById("choice2");
+
+                if (button1.checked){
+                     alert("radio1 selected");
+                }else if (button2.checked) {
+                    alert("Button 2 checked")
+                    return "NewStory.html"
+                }
+            }
+        </script>
     </head>
-    <form  id="Demographics" class="option" method="GET">
+    <h1>Child Information</h1>
+    <form  id="Demographics" class="option" method="GET" onsubmit="choice()" action="NewStory.html">
     <body>
-        Name
+        Child's Name
         <input type="text" id="age" name="Age" required><br> 
         Race
         <select name="race" id="Race"  required>
@@ -24,16 +43,31 @@
                     <option value="Not Hispanic or Latino or Spanish Origin">Not Hispanic or Latino or Spanish Origin</option>
             </select>
             <br>
-        Gender
+        Gender <br>
             <select name="ethnicity" id="ethnicity" required>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
         <br>
-        Procedure
-        <input type="text" name="procedure" id="Procedure"  required> <br>
+        Parent Name
+        <input type="text" name="parentname" id="parentName"  required> <br>
+        Parent Gender <br>
+            <select name="ethnicity" id="ethnicity" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        <br>
         Caregiver
-        <input type="text" name="caregiver" id="CareGiver" required> <br>
+        <input type="text" name="caregiver" id="CareGiver" required> 
+    <div style="text-align: center"><br>
+        <input type="radio" name="story" id = "choice1" value="Template"> 
+        <label for="choice1">Choose Story Template </label><br>
+    </div>
+    <div style="text-align: center">
+        <input type="radio" name="story" id = "choice2" value="Create"> 
+        <label for="choice2">Create New Story </label><br>
+    </div>
+
         <input type="submit" value="Submit" >
     </form>
     </body>
