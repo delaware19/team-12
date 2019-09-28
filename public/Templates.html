@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    </style>
+        <title>Select a template</title> 
+        <link rel="stylesheet" href="Demographics.css">
+        <img src="nemours-childrens-health-system.jpg" alt="ordering_logo" id="logo" class = "center">
+        
+    </head>
+    <body>
+        <form id = "page" class="option" method="POST">
+            Procedure
+            <br>
+            <select id="mySelect">
+              <option value="Cast">Cast</option>
+              <option value="Checkup">Checkup</option>
+              <option value="Shot">Shot</option>
+              <option value="Surgery">Surgery</option>
+            </select>
+            <button id="findStory" onclick = "chooseImage()">Find Story</button>
+        </form>
+        <br>
+        <img id="proc" src="" class = "center">
+    
+    <script>
+        function chooseImage(){
+          //alert("hello");
+          var x = document.getElementById("mySelect").value;
+          var img = document.querySelector('#proc');
+          if(x == "Cast") {
+            img.src = "example_image_2.jpg";
+          }
+          if(x == "Checkup") {
+            img.src = "example_image.jpg";
+          }
+          if(x == "Shot") {
+            img.src = "example_image_2.jpg";
+          }
+          if(x == "Surgery") {
+            img.src = "example_image.jpg";
+          }
+          }
+</script>
+</body>
+</html>
