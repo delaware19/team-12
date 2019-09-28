@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+    
     <style>
     .center {
       display: block;
       margin-left: auto;
       margin-right: auto;
     }
+    
     </style>
         <title>Select a template</title> 
         <link rel="stylesheet" href="Demographics.css">
@@ -23,28 +25,40 @@
               <option value="Shot">Shot</option>
               <option value="Surgery">Surgery</option>
             </select>
-            <button id="findStory" onclick = "chooseImage()">Find Story</button>
+            <button id="findStory" type="button" onclick = "chooseImage()">Find Story</button>
         </form>
         <br>
-        <img id="proc" src="" height="200" width="200" class = "center">
+        <img id="proc" src="" class = "center">
+        <br>
+        <p id="caption" style = "text-align:center;">Test</p>
     
     <script>
+        document.getElementById("caption").style.display = 'none';
         function chooseImage(){
           //alert("hello");
           var x = document.getElementById("mySelect").value;
+          
+          var string = "";
+          
           var img = document.querySelector('#proc');
+          document.getElementById("caption").style.display = 'block';
           if(x == "Cast") {
             img.src = "example_image_2.jpg";
+            string = "Fetch Cast message from backend";
           }
           if(x == "Checkup") {
             img.src = "example_image.jpg";
+            string = "Fetch Checkup message from backend";
           }
           if(x == "Shot") {
             img.src = "example_image_2.jpg";
+            string = "Fetch Shot message from backend";
           }
           if(x == "Surgery") {
             img.src = "example_image.jpg";
+            string = "Fetch Surgery message from backend";
           }
+          document.getElementById('caption').innerHTML = string;
           
           }
 </script>
