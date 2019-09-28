@@ -3,13 +3,14 @@
     <head>
         
         <title>Demographics</title> 
-        <link rel="stylesheet" href="NameCaregiver.css">
+        <link rel="stylesheet" href="Demographics.css">
     </head>
+    <form  id="Demographics" class="option" method="GET">
     <body>
         Name
         <input type="text" id="age" name="Age" required><br> 
         Race
-        <select name="race" id="Race">
+        <select name="race" id="Race"  required>
             <option value="Black or African American">Black or African American</option>
             <option value="American Indian or Alaska Native">American Indian or Alaska Native</option>
             <option value="Asian">Asian</option>
@@ -18,18 +19,22 @@
         </select>
         <br>
         Ethnicity
-            <select name="ethnicity" id="ethnicity">
+            <select name="ethnicity" id="ethnicity"  required>
                     <option value="Hispanic or Latino or Spanish Origin">Hispanic or Latino or Spanish Origin</option>
                     <option value="Not Hispanic or Latino or Spanish Origin">Not Hispanic or Latino or Spanish Origin</option>
             </select>
             <br>
         Gender
-            <select name="ethnicity" id="ethnicity">
+            <select name="ethnicity" id="ethnicity" required>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
         <br>
         Procedure
-        <input type="text" name="procedure" id="Procedure"> <br>
+        <input type="text" name="procedure" id="Procedure"  required> <br>
+        Caregiver
+        <input type="text" name="caregiver" id="CareGiver" required> <br>
+        <input type="submit" value="Submit" >
+    </form>
     </body>
 </html>
