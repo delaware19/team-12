@@ -16,10 +16,9 @@
         
     </head>
     <body>
-        <form id = "page" class="option" method="POST">
-            Procedure
-            <br>
-            <select id="mySelect">
+        <form id = "page" class="option" method="GET">
+            Procedure<br>
+            <select id="mySelect" >
               <option value="Cast">Cast</option>
               <option value="Checkup">Checkup</option>
               <option value="Shot">Shot</option>
@@ -28,7 +27,7 @@
             <button id="findStory" type="button" onclick = "chooseImage()">Find Story</button>
         </form>
         <br>
-        <img id="proc" src="" onclick= window.location.href='storyshow.html'  class = "center">
+        <img id="proc" src="" class = "center" onclick=window.location.href='storyshow.html'>
         <br>
         <p id="caption" style = "text-align:center;">Test</p>
     
@@ -61,7 +60,6 @@
           document.getElementById('caption').innerHTML = string;
           
           }
-
 </script>
 </body>
 </html>

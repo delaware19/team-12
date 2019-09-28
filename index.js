@@ -95,12 +95,7 @@ io.on('connection',function(socket){
 
 	setInterval(function(){
 		socket.emit('updatePage');
-		console.log("WORKING");
 	},1000);
-
-	socket.on('addedPage', function(){
-		console.log("ADDING PAGE");
-	});
 
 	socket.on('disconnect',function(){
 		console.log('User '+socket.id+' has logged off.');
