@@ -6,6 +6,45 @@ var server = app.listen(3000, function(req,res){
 	console.log('server online');
 });
 
+const Age ={
+    TODDLER:"TODDLER", 
+    CHILD:"CHILD", 
+    TEEN:"TEEN", 
+    ADULT:"ADULT"
+}
+
+const Gender ={
+    MALE: "MALE",
+    FEMALE: "FEMALE",
+    OTHER: "OTHER"
+}
+
+const Race={
+    AMERICAN_INDIAN: "AMERICAN_INDIAN",
+    WHITE: "WHITE",
+    BLACK: "BLACK",
+    ASIANPACIFIC_ISLANDER: "ASIANPACIFIC_ISLANDER",
+    LATIN_SPANISH: "LATIN_SPANISH"
+}
+
+class Story {
+    constructor(pages_int, age_enum, gender_enum, race_enum, procedure_str) {
+        this.pages = pages;
+        this.age = age;
+        this.gender = gender;
+        this.race = race;
+        this.procedure = procedure;
+    }
+}
+
+class Frame {
+
+   constructor(picture_str, caption_str) {
+      this.picture = picture;
+      this.caption = caption;
+   }
+}
+
 //Static Files
 app.use(express.static('public'));
 
