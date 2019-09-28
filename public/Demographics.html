@@ -10,15 +10,26 @@
         <img src="nemours-childrens-health-system-banner.jpg" alt="ordering_logo">
         <img src="nemours-childrens-health-system.jpg" alt="ordering_logo">
     </div>
-        <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.0.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.0.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.0.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.0.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.0.0/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyB24TpKl6QsUAPNEDhe-jfAoH_0D5jUPc0",
+        authDomain: "team12-8c377.firebaseapp.com",
+        databaseURL: "https://team12-8c377.firebaseio.com",
+        projectId: "team12-8c377",
+        storageBucket: "team12-8c377.appspot.com",
+        messagingSenderId: "430711974203",
+        appId: "1:430711974203:web:0d4f12e62e92df4b762f1e"
+      };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
 
 </head>
 <div class="form">
@@ -26,11 +37,12 @@
     <form id="Demographics" class="option" method="GET" onSubmit="choice()" >
         <body style="text-align: center">
             <text>Child's Name </text>
-            <input type="text" id="childName" name="childname" required>
+            <input type="text" id="childName" name="childname">fdsafsaf</input>
             <br>
             Caregiver's Name
-            <input type="text" name="caregiverName" id="parentName" required> <br>
-            Child's Gender
+            <input type="text" name="caregiverName" id="parentName"></input>
+             <br>
+            Child's Gender 
             <select name="gender" id="gender_dropdown" width="100%" required>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -52,33 +64,41 @@
                 <option value="White">White</option>
             </select><br>
             <div style="text-align: center">
-                <input type="submit" name="story" id="choice1" value="Choose Story">
-                <input type="submit" name="story" id="choice2" value="Create Story">
+                <input type="button" name="story" id="choice1" value="Choose Story" onclick="storeChildData()">
+                <input type="button" name="story" id="choice2" value="Create Story" onclick="storeChildData()">
             </div>
     </form>
     <!--<script type="text/javascript" src= "/socket.io/socket.io.js"> </script><!-->
 
     <script>
-        var child_name = document.getElementById('childName');
-        var caregiver_name = document.getElementById('caregiverName');
-        var gender_dropdown = document.getElementById('gender_dropdown');
-        var age_dropdown = document.getElementById('age_dropdown');
-        var race_dropdown = document.getElementById('race_dropdown');
+        
+
+        function storeChildData(){
+          //  console.log(document.getElementById('childName'));
+            var child_name = document.getElementById('childName').value.toString();
+            var caregiver_name = document.getElementById('parentName').value.toString();
+            var child_gender = document.getElementById('gender_dropdown').value;
+            var child_age= document.getElementById('age_dropdown').value;
+            var child_race = document.getElementById('race_dropdown').value;
+
+            
+
+            //Storing child data onto firebase database
+            firebase.database().ref('children/' + child_name+child_age).set({
+                childname:child_name,
+                caregivername:caregiver_name,
+                childgender:child_gender,
+                childage:child_age,
+                childrace:child_race
+            });
+          }
+
+          
 
         function chooseStory(){
         var demo = document.querySelector('#Demographics');
         demo.action = "Templates.html";
 
-        var childinfo = {
-            "childname":child_name.value,
-            "caregivername":caregiver_name.value,
-            "childgender":gender_dropdown.value,
-            "childage":age_dropdown.value,
-            "childrace":race_dropdown
-        };
-        
-        //Stores the child's info locally
-        localStorage.setItem('childinfo', JSON.stringify(childinfo));
         
        }
        function createNew() {
@@ -87,6 +107,7 @@
        }
         document.getElementById("choice1").addEventListener("click", chooseStory);
         document.getElementById("choice2").addEventListener("click", createNew);
+
     </script>
 
     <script type="text/javascript" src="client.js"></script>
