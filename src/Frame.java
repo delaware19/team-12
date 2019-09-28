@@ -1,7 +1,8 @@
 // Frame class, containing picture and caption
-
-import java.lang.Object.Image;
-
+import java.awt.Image;
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
 public class Frame {
 
    private Image picture;
@@ -29,6 +30,14 @@ public class Frame {
    public static void setCaption(Frame a, String cap) {
       a.caption = cap;
       return;
+   }
+
+
+   public void main() {
+      try {
+         Frame page1 = new Frame(ImageIO.read(new File("./example_image_2.jpg")), "hello" );
+      }
+      catch (IOException e) {}
    }
 
 }
