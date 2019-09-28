@@ -80,7 +80,9 @@ img{
   transition: background-color 0.6s ease;
 }
 
-
+#edit{
+  text-align: left 
+}
 
 input{
   display:block;
