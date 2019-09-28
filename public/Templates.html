@@ -12,9 +12,11 @@
     </style>
         <title>Select a Story</title> 
         <link rel="stylesheet" href="Demographics.css">
-        <img src="nemours-childrens-health-system.jpg" alt="ordering_logo" id="logo" class = "center">
-
-                <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+        <div >
+            <img class="logo1" src="nemours-childrens-health-system-banner.jpg" alt="ordering_logo">
+            <img class="logo2" src="nemours-childrens-health-system.jpg" alt="ordering_logo">
+        </div>
+      <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-database.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -65,19 +67,19 @@
           document.getElementById("caption").style.display = 'block';
           if(x == "Cast") {
             img.src = "example_image_2.jpg";
-            string = "Fetch Cast message from backend";
+            string = "Cast Procedure";
           }
           if(x == "Checkup") {
             img.src = "example_image.jpg";
-            string = "Fetch Checkup message from backend";
+            string = "Checkup";
           }
           if(x == "Shot") {
             img.src = "example_image_2.jpg";
-            string = "Fetch Shot message from backend";
+            string = "Shot Procedure";
           }
           if(x == "Surgery") {
             img.src = "example_image.jpg";
-            string = "Fetch Surgery message from backend";
+            string = "Surgery Procedure";
           }
           document.getElementById('caption').innerHTML = string;
           

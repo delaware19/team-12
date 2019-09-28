@@ -5,21 +5,31 @@ html{
 h1{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
 }
 
-.logo {
-  height: 40%;
+.logo1 {
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: -20px;
+}
+.logo2 {
+  height: 30%;
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 65%;
-  padding-bottom:30px;
+  position: relative;
+  top: -40px;
 }
 body{
 	width: 100%;
-	height: 100%;
-	background-color: white
-    
+  height: 100%;
+  min-height: 950px;
+  background-color: white;  
 }
 input[type=text] {
     border: 2px solid lightblue;
@@ -40,6 +50,13 @@ input[type=radio] {
 .form{
   border-color: 2px lightblue;
   border-width: 5px;
+  margin-bottom: 40px;
+  position: relative;
+  top: -40px;
+}
+#Demographics{
+  position: relative;
+  top: -30px;
 }
 .option{
     display:block;
@@ -51,6 +68,16 @@ input[type=radio] {
     background-color: white;
     padding: 50dp
     
+}
+#proc{
+  position: relative;
+  top: -40px;
+  left: -22px;
+}
+#caption {
+  position: relative;
+  top: -50px;
+  left: -22px;
 }
 #mySelect{
   width: 70%; 
