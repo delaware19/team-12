@@ -4,8 +4,12 @@
         
         <title>Demographics</title> 
         <link rel="stylesheet" href="Demographics.css">
-        <img src="nemours-childrens-health-system.jpg" alt="ordering_logo" id="logo">
+        <div class="logo">
+        <img src="nemours-childrens-health-system-banner.jpg" alt="ordering_logo" >
+        <img src="nemours-childrens-health-system.jpg" alt="ordering_logo" >
+        </div>
     </head>
+    <h1>Child Information</h1>
     <form  id="Demographics" class="option" method="GET">
     <body>
         Child's Name
@@ -25,14 +29,20 @@
                     <option value="Not Hispanic or Latino or Spanish Origin">Not Hispanic or Latino or Spanish Origin</option>
             </select>
             <br>
-        Gender
+        Gender <br>
             <select name="ethnicity" id="ethnicity" required>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
         <br>
-        Procedure
-        <input type="text" name="procedure" id="Procedure"  required> <br>
+        Parent Name
+        <input type="text" name="parentname" id="parentName"  required> <br>
+        Parent Gender <br>
+            <select name="ethnicity" id="ethnicity" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        <br>
         Caregiver
         <input type="text" name="caregiver" id="CareGiver" required> <br>
         <input type="submit" value="Submit" >

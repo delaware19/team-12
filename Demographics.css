@@ -2,11 +2,23 @@ html{
 	width: 100%;
 	height: 100%;
 }
-logo{
-display: block;
+h1{
+    text-align: center
+}
+
+.logo {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 65%;
+  padding-bottom:30px;
 }
 body{
 	width: 100%;
@@ -26,7 +38,7 @@ input{
     margin-right: auto;
     max-width: 300px;
     padding: 20px;
-    background-color: white;
+    background-color: whitesmoke;
     padding: 50dp
     
 }
