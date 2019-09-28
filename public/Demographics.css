@@ -58,7 +58,7 @@ input[type=radio] {
     padding: 50dp
     
 }
-.mySelect{
+#mySelect{
   width: 70%; 
   height: 25px;
    border-color: 2px solid lightblue; 
