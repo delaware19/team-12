@@ -13,12 +13,15 @@
         <img src="nemours-childrens-health-system.jpg" alt="ordering_logo" id="logo" class = "center">
     </head>
     <body>
+        <h1>Create a New Story</h1>
         <form id = "page" class="option" method="POST">
-            <input type='file' />
-            <br><img id="selected_img" src="" class = "center">
-            <br>
+            Procedure Name
+            <input type="text" id="procedure name"/>
             Caption
             <input type="text" name = "caption" id="caption_input"><br>
+            <br><input type='file' />
+            <img id="selected_img" src="" class = "center">
+            <br><br>
             <input type="Submit" value="Add Page" onsubmit="addToListOfFrames()">
             <input type="Submit" value="Complete Story" onsubmit="endStory()">
         </form>
