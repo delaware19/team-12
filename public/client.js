@@ -8,14 +8,6 @@ var childinformationSubmit_btn = document.getElementById("childinformation_btn")
 //Create Story Page
 var selectedimg = document.getElementById("selected_img");//this.files[0]
 
-
-
-/*var socket = io.connect('http://localhost:3000');
-socket.on('connect',function(){
-	SOCKET_ID = socket.io.engine.id; //gives the variable 'SOCKET_ID' to the client, the socket 
-									//connection unique id (to idenify client-speciifc player)
-});*/
-
 function loadJSON(callback) {   
   var xobj = new XMLHttpRequest();
   xobj.overrideMimeType("application/json");
@@ -58,9 +50,6 @@ class Frame {
 //         console.log("snapshot.node_.children_.root_.value.value_: ", snapshot.node_.children_.root_.value.value_)
 //       // });
 //   });
-
-var root = database.ref('team12-8c377');
-console.log(root);
 
 function createStory(){
 	var name_input = document.getElementById("childName").value;
@@ -108,19 +97,7 @@ function endStory(){
 	return listOfFrames();
 	console.log(listOfFrames);
 };
-//localStorage.setItem('myStorage', JSON.stringify(example));
-childinformationSubmit_btn.addEventListener("click", generateNewStory);
 
-
-//Updates the page constantly
-socket.on('updatePage',function(){
-	console.log("Updating page");
-});
-
-console.log("WORKING");
-console.log(demographics);
-
-//create_button.onclick = test();
 
 
 
