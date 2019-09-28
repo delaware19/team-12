@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="Templates.css">
     <head>
     
     <style>
@@ -18,8 +19,7 @@
     <body>
         <form id = "page" class="option" method="POST">
             Procedure
-            <br>
-            <select id="mySelect">
+            <select class="mySelect" >
               <option value="Cast">Cast</option>
               <option value="Checkup">Checkup</option>
               <option value="Shot">Shot</option>
@@ -28,7 +28,7 @@
             <button id="findStory" type="button" onclick = "chooseImage()">Find Story</button>
         </form>
         <br>
-        <img id="proc" src="" class = "center">
+        <img id="proc" src="" onclick= window.location.href='storyshow.html'  class = "center">
         <br>
         <p id="caption" style = "text-align:center;">Test</p>
     
