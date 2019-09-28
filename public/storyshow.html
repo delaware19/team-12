@@ -26,7 +26,7 @@ h1 {
     <div style="background: rgb(0,232,255);
     background: linear-gradient(90deg, rgba(0,232,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(0,232,255,1) 100%);">
     <input type = "text" name="caption1" value="Today, I'm going to the clinic!" ></input> </div>
-    <input type="submit" name="edit_button1" id="edit" value="Edit" onclick="editCaption(document.getElementsByName("caption1"))></input>
+   
   </div>
 
   <div class="mySlides fade">
@@ -35,7 +35,7 @@ h1 {
     <div style="background: rgb(0,232,255);
     background: linear-gradient(90deg, rgba(0,232,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(0,232,255,1) 100%);">
     <input type = "text" name="caption2" value="Now I'm going to [Procedure] with mommy" ></input> </div>
-    <input type="submit" name="edit_button2" id="edit" value="Edit" onclick="editCaption(document.getElementsByName("caption2"))></input>
+    
   </div>
 
   <div class="mySlides fade">
@@ -44,7 +44,10 @@ h1 {
 
     <div style="background: rgb(0,232,255);
     background: linear-gradient(90deg, rgba(0,232,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(0,232,255,1) 100%);">
-    <input type = "text" name="caption3" value="The Nurse said I did a great job today, I think so too!" ></input> </div>
+    <input type = "text" name="caption3" value="The Nurse said I did a great job today, I think so too!" ></input> 
+    
+  </div>
+  <input type="submit" name="edit_button" id="edit" value="Edit" onclick="editCaption(document.getElementsByName('caption3'))"></input>
 
   <!-- Next and previous buttons -->
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -57,10 +60,6 @@ h1 {
   <span class="dot" id="Do2t"onclick="currentSlide(2)"></span>
   <span class="dot" id ="Dot3" onclick="currentSlide(3)"></span>
   </div>
-
-  
-
-  <input type="submit" name="edit_button" id="edit" value="Edit" onclick="editCaption(document.getElementsByName("caption3"))></input>
   
 
 </body>
@@ -70,12 +69,16 @@ h1 {
 
 var root = firebase.database().ref('team12-8c377');
 
-function editCaption(name){
+function editCaption(){
       var storyid = 1011
-      var str = document.getElementById(name)
+      var str1 = document.getElementById("caption1")
+      var str2 = document.getElementById("caption2")
+      var str3 = document.getElementById("caption3")
       firebase.database().ref('users/' + str).set({
           storyID: storyid,
-          caption:  str
+          caption1:  str1,
+          caption2: str2,
+          caption3: str3
       });
 }
 
