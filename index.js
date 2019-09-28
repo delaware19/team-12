@@ -1,4 +1,4 @@
-var express = require('express');
+/*var express = require('express');
 var app = express();
 var socket = require('socket.io');
 
@@ -68,7 +68,7 @@ var story1 = {
 */
 
 //Static Files
-app.use(express.static('public'));
+/*app.use(express.static('public'));
 
 app.get('/',function(req,res){
 	res.sendFile(__dirname+'/public/Demographics.html');

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/delaware19/team-12#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "firebase": "^7.0.0",
     "fs": "0.0.1-security",
     "socketio": "^1.0.0"
   }

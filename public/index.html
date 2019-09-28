@@ -4,17 +4,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Welcome to Firebase Hosting</title>
+    
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.0.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.0.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.0.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.0.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.0.0/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
 
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB24TpKl6QsUAPNEDhe-jfAoH_0D5jUPc0",
+    authDomain: "team12-8c377.firebaseapp.com",
+    databaseURL: "https://team12-8c377.firebaseio.com",
+    projectId: "team12-8c377",
+    storageBucket: "team12-8c377.appspot.com",
+    messagingSenderId: "430711974203",
+    appId: "1:430711974203:web:0d4f12e62e92df4b762f1e"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+  
     <style media="screen">
       body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
       #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
@@ -51,8 +66,12 @@
         //
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
+  
+
         try {
           let app = firebase.app();
+          
+          
           let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
           document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
         } catch (e) {
@@ -60,6 +79,11 @@
           document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
         }
       });
+
+      var root =firebase.database().ref('team12-8c377');
+
+      //var root = database.ref('team12-8c377');
+      console.log(root);
     </script>
   </body>
 </html>

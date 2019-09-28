@@ -10,11 +10,11 @@ var selectedimg = document.getElementById("selected_img");//this.files[0]
 
 
 
-var socket = io.connect('http://localhost:3000');
+/*var socket = io.connect('http://localhost:3000');
 socket.on('connect',function(){
 	SOCKET_ID = socket.io.engine.id; //gives the variable 'SOCKET_ID' to the client, the socket 
 									//connection unique id (to idenify client-speciifc player)
-});
+});*/
 
 function loadJSON(callback) {   
   var xobj = new XMLHttpRequest();
@@ -50,6 +50,17 @@ class Frame {
       this.caption_str = caption_str;
    }
 }
+
+// var leadsRef = database.ref('leads');
+//   leadsRef.on('value', function(snapshot) {
+//       // snapshot.forEach(function(childSnapshot) {
+//         var childData = snapshot.node_.children_.root_.value.value_;
+//         console.log("snapshot.node_.children_.root_.value.value_: ", snapshot.node_.children_.root_.value.value_)
+//       // });
+//   });
+
+var root = database.ref('team12-8c377');
+console.log(root);
 
 function createStory(){
 	var name_input = document.getElementById("childName").value;
