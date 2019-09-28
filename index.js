@@ -38,7 +38,6 @@ class Story {
 }
 
 class Frame {
-
    constructor(picture_str, caption_str) {
       this.picture = picture;
       this.caption = caption;
@@ -64,9 +63,11 @@ console.log(jsonContent);
 
 io.on('connection',function(socket){
 	console.log('User '+socket.id+' has logged on.');
-	setInterval(function(){
-		console.log("Printing");
-	}, 1000);
+	
+	socket.on('userclicked', function(data){
+		console.log("A USER CLICKED A BUTTON");
+		console.log(data);
+	});
 
 	socket.on('disconnect',function(){
 		console.log('User '+socket.id+' has logged off.');
